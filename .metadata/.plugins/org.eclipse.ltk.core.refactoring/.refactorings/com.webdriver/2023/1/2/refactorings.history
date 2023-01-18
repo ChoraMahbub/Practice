@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MouseOverDemo.java&apos; to &apos;QAAutomationTechie/src/test/java/InterviewQuestionsTest&apos;&#x0D;&#x0A;- Original project: &apos;com.webdriver&apos;&#x0D;&#x0A;- Destination element: &apos;QAAutomationTechie/src/test/java/InterviewQuestionsTest&apos;&#x0D;&#x0A;- Original element: &apos;com.webdriver.MouseOverDemo.java&apos;" description="Copy compilation unit" destination="=QAAutomationTechie/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;InterviewQuestionsTest" element1="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.webdriver{MouseOverDemo.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1673384651056" units="1" version="1.0"/>
+</session>

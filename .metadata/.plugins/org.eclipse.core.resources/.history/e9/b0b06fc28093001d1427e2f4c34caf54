@@ -1,0 +1,67 @@
+package com.mhmpractice;
+
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SoftAssertDemo {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+	private void softAssert() {
+
+	SoftAssert softAssert = new SoftAssert();
+			
+	WebDriverManager.chromedriver().setup();
+	WebDriver driver =  new ChromeDriver();
+	driver.manage().deleteAllCookies();
+	driver.navigate().to("https://www.browserstack.com/");
+	Boolean verifyTitle = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack");
+	Boolean verifyTitle2 = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack2");
+	Boolean verifyTitle3 = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack3");
+	Boolean bol = null;
+
+	
+	softAssert.assertEquals(verifyTitle, verifyTitle2);
+    System.out.println(
+            "Soft assert Equals Passed");
+    
+    softAssert.assertNotEquals(verifyTitle, verifyTitle2);
+    System.out.println(
+            "Soft assert NotEquals Passed");
+	
+    softAssert.assertTrue(verifyTitle);
+    System.out.println(
+            "Soft assert True Passed");
+    
+    softAssert.assertFalse(verifyTitle3);
+    System.out.println(
+            "Soft assert False Passed");
+    
+    softAssert.assertNotNull(verifyTitle);
+    System.out.println(
+            "Soft assert NotNull Passed");   
+    
+    softAssert.assertNull(bol);
+    System.out.println(
+            "Soft assert Null Passed");   
+    
+    
+    softAssert.assertAll();
+    
+	driver.close();
+	
+	}
+
+}

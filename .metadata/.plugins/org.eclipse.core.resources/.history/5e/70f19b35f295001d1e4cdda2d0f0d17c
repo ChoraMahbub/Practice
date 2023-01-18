@@ -1,0 +1,23 @@
+package com.mhmpractice;
+
+import com.mhmpractice.Automobil.Bus;
+
+public class Bus extends Automobil{
+	
+	// overriding method
+	public void car()
+	{
+		System.out.println("This is a Bus");
+
+	}
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+Bus obj = new Bus();
+// This will call the child class version of car()
+obj.car();
+
+
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.mhmpractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class ActionsDemo {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver =  new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		
+		// Maximize the browser
+        driver.manage().window().maximize();
+     // Launch Website
+		driver.navigate().to("https://www.browserstack.com/");
+		
+		WebElement ftrial = driver.findElement(By.xpath("//a[@id='free-trial-link-anchor']"));
+		
+		Thread.sleep(2000);
+		// Right Click
+		Actions action = new Actions(driver);
+		action.contextClick(ftrial).perform();
+		// refresh page
+		//driver.navigate().refresh();
+		ftrial.sendKeys(Keys.F5);
+		
+		Thread.sleep(2000);
+		WebElement prod = driver.findElement(By.xpath("//button[@id='product-menu-toggle']"));
+		// Move to Element
+		action.moveToElement(prod).perform();
+		
+		String url = driver.getCurrentUrl();
+		System.out.println("Current URL: " + url);
+
+	}
+
+}

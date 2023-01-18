@@ -1,0 +1,33 @@
+package headlessChromeDemo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class HeadlessHtmlUnit {
+	
+	public static void main(String[] args) {
+		
+		WebDriverManager.firefoxdriver().setup();      
+		// Configuration for headless
+		FirefoxOptions options = new FirefoxOptions();
+		
+		//	Download HtmlUnitDriver from https://github.com/seleniumHQ/htmlunit-driver/releases
+		//	htmlunit-driver-4.7.2
+		//	htmlunit-driver-4.7.2-jar-with-dependencies
+		
+		// This is one way
+		// options.setHeadless(true);
+		// This is another way
+		options.addArguments("--headless");
+		WebDriver driver =  new FirefoxDriver(options);
+		
+		driver.get("https://demo.nopcommerce.com/");
+		
+		System.out.println("Title of the page is: " +driver.getTitle());
+
+	}
+
+}

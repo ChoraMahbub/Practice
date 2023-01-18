@@ -1,0 +1,18 @@
+package com.mhmpractice;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadWrightExcelDemo {
+
+	public static void main(String[] args) {
+		
+		FileInputStream fis = new FileInputStream("C:\\Users\\JHUMA\\Desktop\\AutomationPractice\\WebDriver\\com.mhmpractice\\TestData\\ExtrapolatoryTestCases.xlsx");
+		XSSFWorkbook wb = new XSSFWorkbook();
+		XSSFWorksheet s = wb.getSheet(null);
+		
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.mhmpractice;
+
+import com.mhmpractice.Automobil.Bus;
+
+public class Bus extends Automobil{
+	
+	// overriding method
+	public void car()
+	{
+		System.out.println("This is a Bus");
+
+	}
+
+	}
+

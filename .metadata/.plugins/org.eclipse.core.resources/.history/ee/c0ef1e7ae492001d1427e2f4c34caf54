@@ -1,0 +1,29 @@
+package headlessDemo;
+
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class HeadlessHtmlUnit {
+
+	public static void main(String[] args) {
+
+		WebDriverManager.firefoxdriver().setup();
+
+		// Download HtmlUnitDriver from
+		// https://github.com/seleniumHQ/htmlunit-driver/releases
+		// htmlunit-driver-4.7.2
+		// htmlunit-driver-4.7.2-jar-with-dependencies
+		// Right Click on your project --> Properties --> Java Build Path --> Libraries --> Add External JARS --> Select Files -->Apply and Close
+		// --> Classpath -- is not showing
+		
+		HtmlUnitDriver driver = new HtmlUnitDriver ();
+		driver.get("https://demo.nopcommerce.com/");
+
+		System.out.println("Title of the page is: " + driver.getTitle());
+		System.out.println("Current URL is: " + driver.getCurrentUrl());
+
+	}
+
+}

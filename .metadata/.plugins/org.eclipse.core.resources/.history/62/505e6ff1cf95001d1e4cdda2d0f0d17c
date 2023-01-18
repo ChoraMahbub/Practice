@@ -1,0 +1,6 @@
+package com.mhmpractice;
+
+			//create an interface
+			interface Polygon {
+
+			}

@@ -1,0 +1,40 @@
+package com.mhmpractice;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
+
+public class AssertDemo {
+
+	public static void main(String[] args) {
+		
+//		System.setProperty("webdriver.chrome.driver", "C:\\I2EWebsiteTest\\Driver\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver =  new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.navigate().to("https://www.browserstack.com/");
+		Boolean verifyTitle = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack");
+		Boolean verifyTitle2 = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack2");
+		assertTrue(verifyTitle);
+        System.out.println(
+                "assertTrue Passed");
+		assertFalse(verifyTitle2);
+        System.out.println(
+                "assertFalse Passed");
+        assertNotNull(verifyTitle2);
+        System.out.println(
+                "assertNotNull Passed");   
+        
+		driver.close();
+		
+		
+
+	}
+
+}

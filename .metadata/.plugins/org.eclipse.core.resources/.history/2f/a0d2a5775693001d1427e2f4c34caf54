@@ -1,0 +1,30 @@
+package com.mhmpractice;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadWrightExcelDemo {
+
+	public static void main(String[] args) throws IOException {
+		
+		String userdir = System.getProperty("user.dir");
+        System.out.println(
+                "The user directory is: " + userdir);
+		//FileInputStream fis = new FileInputStream(userdir + "\\com.mhmpractice\\TestData\\ExtrapolatoryTestCases.xlsx");
+		//C:\Users\JHUMA\Desktop\AutomationPractice\WebDriver\com.mhmpractice\TestData\ExtrapolatoryTestCases.xlsx
+		FileInputStream fis = new FileInputStream("C:\\Users\\JHUMA\\Desktop\\AutomationPractice\\WebDriver\\com.mhmpractice\\TestData\\ExtrapolatoryTestCases.xlsx");
+		
+	
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		XSSFSheet s = wb.getSheet("TestCases");
+		String cellValue = s.getRow(6).getCell(1).getStringCellValue();
+        System.out.println(
+                "The cell value is: " + cellValue);
+		
+	}
+
+}

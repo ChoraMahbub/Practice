@@ -1,0 +1,26 @@
+package com.mhmpractice;
+
+	class Automobil {
+	
+			// overridden method
+			public void car()
+			{
+				System.out.println("This is a Automobil");
+			}
+}
+
+	class Bus extends Automobil{
+		// overriding method
+		public void car()
+		{
+			System.out.println("This is a Bus");
+		}
+		
+		public static void main(String args[]) {
+			Bus obj = new Bus();
+			// This will call the child class version of car()
+			obj.car();
+		}
+		
+	}
+

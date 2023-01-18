@@ -1,0 +1,5 @@
+package com.mhmpractice;
+
+public interface Polygon {
+
+}

@@ -1,0 +1,12 @@
+package com.mhmpractice;
+
+class Automobil {
+	
+			// overridden method
+			public void car()
+			{
+				System.out.println("This is a Automobil");
+			}
+		
+}
+

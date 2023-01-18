@@ -1,0 +1,17 @@
+package com.mhmpractice;
+
+public class Automobil {
+	
+			// overridden method
+			public void car()
+			{
+				System.out.println("This is a Automobil");
+			}
+		
+		class Bus extends Automobil{
+
+
+	}
+
+}
+}
